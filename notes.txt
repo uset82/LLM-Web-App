@@ -1,0 +1,86 @@
+# Chatbot Integration Investigation Notes
+
+## Current App Structure
+- React + Vite application
+- Uses Tailwind CSS for styling
+- shadcn/ui components available
+- React Router for navigation
+- Markdown content rendering capability
+
+## Integration Points
+1. Main App Layout (App.jsx):
+   - Flexible container structure
+   - Can add chatbot as floating element
+
+2. UI Components:
+   - shadcn/ui components available
+   - Alert component for notifications
+   - ScrollArea for chat history
+   - Button components for interactions
+
+3. Content Access:
+   - Content stored in /public/content/
+   - Markdown files for course content
+   - Need to investigate content loading mechanism
+
+## Required Features
+1. Content Explanation:
+   - Access to current page content
+   - Integration with Gemini API
+   - Markdown parsing/rendering
+
+2. Code Explanation:
+   - Code block detection
+   - Syntax highlighting support
+   - Language detection
+
+3. Voice Features:
+   - Need to identify voice API
+   - Speech synthesis
+   - Voice input handling
+
+## Technical Requirements
+1. API Integration:
+   - Google Gemini API available
+   - Need to verify key permissions
+   - Need error handling
+
+2. UI Components Needed:
+   - Chat container
+   - Message bubbles
+   - Input field
+   - Voice control buttons
+   - Minimize/maximize controls
+
+3. State Management:
+   - Chat history
+   - Voice state
+   - UI state (minimized/maximized)
+
+## Dependencies to Add:
+1. Gemini API client
+2. Voice API (TBD)
+3. react-speech-recognition (potential)
+4. react-speech-kit (potential)
+
+## Questions/Concerns:
+1. Voice API selection and credentials
+2. Chat history persistence
+3. Performance impact of real-time voice processing
+4. Mobile responsiveness
+5. Accessibility considerations
+
+## Next Steps:
+1. Request voice API decision/credentials
+2. Verify Gemini API key permissions
+3. Design chatbot UI component
+4. Implement content access layer
+5. Add voice integration
+6. Test and optimize
+
+## Technical Constraints:
+1. Must work with existing React/Vite setup
+2. Must maintain responsive design
+3. Must handle markdown content
+4. Must support code highlighting
+5. Must be accessible

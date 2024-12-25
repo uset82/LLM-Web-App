@@ -1,0 +1,22 @@
+- [ ] week1/day1.md: enhance visual aids with more mermaid diagrams, expand interactive components
+- [ ] week1/day2.md: add more detailed hands-on practice examples
+- [ ] week1/day3.md: add more visual aids for API integration patterns
+- [ ] week1/day4.md: add more diagrams for fine-tuning concepts
+- [ ] week1/day5.md: add more interactive evaluation examples
+- [ ] week2/day1.md: add more advanced prompting diagrams
+- [ ] week2/day2.md: add more RAG architecture diagrams
+- [ ] week2/day3.md: add more evaluation metric visualizations
+- [ ] week2/day4.md: add more fine-tuning strategy diagrams
+- [ ] week2/day5.md: add more production deployment diagrams
+- [ ] week3/day1.md: add more architecture diagrams
+- [ ] week3/day2.md: add more performance optimization visualizations
+- [ ] week3/day3.md: add more monitoring dashboards
+- [ ] week3/day4.md: add more security architecture diagrams
+- [ ] week3/day5.md: add more cost optimization visualizations
+- [ ] week4/day1.md: add more multi-modal architecture diagrams
+- [ ] week4/day2.md: add more agent architecture diagrams
+- [ ] week4/day3.md: add more use case diagrams
+- [ ] week4/day4.md: add more implementation diagrams
+- [ ] week4/day5.md: add more presentation guidelines
+
+Note: All required sections are present but could be enhanced with additional visual aids and examples.
