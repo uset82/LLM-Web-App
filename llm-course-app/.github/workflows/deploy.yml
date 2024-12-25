@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./llm-course-app
+
+    - name: Build project
+      run: npm run build
+      working-directory: ./llm-course-app
+
+    - name: Upload production artifacts
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./llm-course-app/dist
+
+  deploy:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
