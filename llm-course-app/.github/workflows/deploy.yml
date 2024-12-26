@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy React App
 
 on:
   push:
@@ -18,15 +18,17 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: npm install
-        working-directory: ./llm-course-app
+        run: |
+          cd llm-course-app
+          npm install
       - name: Build
-        run: npm run build
-        working-directory: ./llm-course-app
+        run: |
+          cd llm-course-app
+          npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./llm-course-app/dist
+          path: llm-course-app/dist
 
   deploy:
     needs: build

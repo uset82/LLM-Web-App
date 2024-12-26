@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  base: "/llm-course-app/",
+  base: "/LLM-Web-App/",  // Matches your repository name
   plugins: [react()],
   resolve: {
     alias: {

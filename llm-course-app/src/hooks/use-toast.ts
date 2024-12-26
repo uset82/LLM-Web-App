@@ -3,13 +3,17 @@
 // Inspired by react-hot-toast library
 import * as React from "react"
 
-import type {
-  ToastActionElement,
-  ToastProps,
-} from "@/components/ui/toast"
+// Removed missing import:
+// import { ... } from "@/components/ui/toast"
 
 const TOAST_LIMIT = 1
 const TOAST_REMOVE_DELAY = 1000000
+
+type ToastActionElement = React.ReactNode // Adjust if needed
+interface ToastProps {
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}
 
 type ToasterToast = ToastProps & {
   id: string
@@ -93,8 +97,7 @@ export const reducer = (state: State, action: Action): State => {
     case actionTypes.DISMISS_TOAST: {
       const { toastId } = action
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
+      // ! Side effects !
       if (toastId) {
         addToRemoveQueue(toastId)
       } else {
@@ -130,7 +133,6 @@ export const reducer = (state: State, action: Action): State => {
 }
 
 const listeners: Array<(state: State) => void> = []
-
 let memoryState: State = { toasts: [] }
 
 function dispatch(action: Action) {
@@ -158,7 +160,8 @@ function toast({ ...props }: Toast) {
       ...props,
       id,
       open: true,
-      onOpenChange: (open) => {
+      // Explicitly typed parameter:
+      onOpenChange: (open: boolean) => { // Added type: boolean
         if (!open) dismiss()
       },
     },
